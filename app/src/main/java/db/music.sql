@@ -10,5 +10,5 @@ CREATE TABLE albums (
   ID INTEGER primary key AUTOINCREMENT,
   title VARCHAR(50),
   genre VARCHAR(50),
-  artist_id INTEGER references artists(id)
+  artist_id INTEGER references artists(id) ON DELETE CASCADE
 );

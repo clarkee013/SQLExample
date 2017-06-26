@@ -18,7 +18,7 @@ public class SqlRunner {
 
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:db/music.db");
+            c = DriverManager.getConnection("jdbc:sqlite:./app/src/main/java/db/music.db");
             c.setAutoCommit(false);
             stmt = c.createStatement();
 
@@ -26,9 +26,6 @@ public class SqlRunner {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
-
-        System.out.println("Opened database successfully");
-        System.out.println();
 
     }
 
@@ -59,8 +56,6 @@ public class SqlRunner {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
-        System.out.println("Records created successfully");
-        System.out.println();
         return id;
     }
 
@@ -74,9 +69,9 @@ public class SqlRunner {
             System.exit(0);
         }
 
-        System.out.println("Operation done successfully");
-        System.out.println();
         return rs;
     }
+
+
 
 }
